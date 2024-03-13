@@ -46,11 +46,7 @@ public abstract class Figura {
 		this.y = y;
 	}
 
-	public double calcularArea() {
-		return getX() * getY();
-	}
+	public abstract double calcularArea();
 
-	public double calcularPerimetro() {
-		return getX() + getY();
-	}
+	public abstract double calcularPerimetro();
 }
