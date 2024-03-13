@@ -1,10 +1,15 @@
 package org.indra.claseTresFiguras.models;
 
-public class Circulo extends Figura {
+public class Circulo extends Figura implements AreaCalculable {
 	private double radio;
 
 	public Circulo(Integer x, Integer y, double radio) {
 		super(x, y);
+		this.radio = radio;
+	}
+
+	public Circulo(double radio) {
+		super(0, 0);
 		this.radio = radio;
 	}
 

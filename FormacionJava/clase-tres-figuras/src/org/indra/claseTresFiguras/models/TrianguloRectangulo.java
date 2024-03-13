@@ -1,11 +1,17 @@
 package org.indra.claseTresFiguras.models;
 
-public class TrianguloRectangulo extends Figura {
+public class TrianguloRectangulo extends Figura implements AreaCalculable {
 	private double base;
 	private double altura;
 
 	public TrianguloRectangulo(Integer x, Integer y, double base, double altura) {
 		super(x, y);
+		this.base = base;
+		this.altura = altura;
+	}
+
+	public TrianguloRectangulo(double base, double altura) {
+		super(0, 0);
 		this.base = base;
 		this.altura = altura;
 	}

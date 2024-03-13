@@ -1,11 +1,17 @@
 package org.indra.claseTresFiguras.models;
 
-public class Rectangulo extends Figura {
+public class Rectangulo extends Figura implements AreaCalculable {
 	private double ladoA;
 	private double ladoB;
 
 	public Rectangulo(Integer x, Integer y, double ladoA, double ladoB) {
 		super(x, y);
+		this.ladoA = ladoA;
+		this.ladoB = ladoB;
+	}
+
+	public Rectangulo(double ladoA, double ladoB) {
+		super(0, 0);
 		this.ladoA = ladoA;
 		this.ladoB = ladoB;
 	}
