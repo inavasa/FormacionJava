@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="repositoryPersonaje"
+          class="org.indra.claseDoce.persistence.PersonajeRepository"/>
+    <!-- Inyección de dependencias por Setter -->
+    <bean id="service"
+          class="org.indra.claseDoce.services.PersonajeService">
+        <property name="repository" ref="repositoryPersonaje"/>
+    </bean>
+    <!-- Inyección de dependencias por Constructor -->
+    <bean id="serviceConstructor"
+          class="org.indra.claseDoce.services.PersonajeService_ConstructorInjection">
+        <constructor-arg ref="repositoryPersonaje"/>
+    </bean>
+</beans>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="repositoryPersonaje"
+          class="org.indra.claseDoce.persistence.PersonajeRepository"/>
+    <bean id="consoleLogger"
+          class="org.indra.claseDoce.logging.ConsoleLogger"/>
+    <bean id="service"
+          class="org.indra.claseDoce.services.PersonajeServiceLoggingProxy">
+        <property name="logger" ref="consoleLogger"/>
+        <property name="objetoConcreto" ref="serviceImplementation"/>
+    </bean>
+    <bean id="serviceImplementation"
+          class="org.indra.claseDoce.services.PersonajeService">
+        <property name="repository" ref="repositoryPersonaje"/>
+    </bean>
+</beans>
